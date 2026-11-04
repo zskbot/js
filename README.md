@@ -1,0 +1,78 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zskbot/pages_logo/main/OCode.js/ocode-js-logo-animated.gif?v=3" alt="OCode.js animated primary logo" width="420">
+</p>
+
+<h1 align="center">OCode.js Documentation Hub</h1>
+
+<p align="center">Small tools. Solid foundations.</p>
+
+A standalone documentation hub for OCode.js and selected Velclaw engineering projects. This repository organizes documentation, design references, source audits, and implementation plans; it does not merge application codebases or automatically write to other repositories.
+
+## Start here
+
+- **Project overview and architecture:** [docs/ECOSYSTEM.md](docs/ECOSYSTEM.md)
+- **OCode.js implementation roadmap:** [docs/ROADMAP.md](docs/ROADMAP.md)
+- **Agent Skills Directory:** [docs/AGENT-SKILLS-DIRECTORY.md](docs/AGENT-SKILLS-DIRECTORY.md) — curated skill categories, installation command, platform notes, and safety checklist.
+- **Plugin development for ChatGPT and Codex:** [docs/OPENAI-PLUGIN-DEVELOPMENT.md](docs/OPENAI-PLUGIN-DEVELOPMENT.md) — plugin architecture, Skills, MCP, authentication, testing, publishing, metadata, UI, and security.
+- **x-bo by OCODE.js product/design blueprint:** [docs/X-BO-BY-OCODEJS-BLUEPRINT.md](docs/X-BO-BY-OCODEJS-BLUEPRINT.md) — target architecture, UX workflow, design system, GitHub/release gates, security, and staged implementation.
+- **Source inventory and audit findings:** [docs/SOURCE-AUDIT.md](docs/SOURCE-AUDIT.md)
+- **Content review:** [docs/CONTENT-REVIEW.md](docs/CONTENT-REVIEW.md)
+- **Canonical alignment plan:** [docs/CANONICAL-ALIGNMENT-PLAN.md](docs/CANONICAL-ALIGNMENT-PLAN.md)
+- **Integration contracts and release gates:** [docs/INTEGRATION-MATRIX.md](docs/INTEGRATION-MATRIX.md)
+- **Phased verification plan:** [docs/VERIFICATION-PLAN.md](docs/VERIFICATION-PLAN.md)
+- **Ecosystem development roadmap:** [docs/ECOSYSTEM-ROADMAP-2026-10.md](docs/ECOSYSTEM-ROADMAP-2026-10.md)
+- **Infrastructure architecture:** [docs/INFRASTRUCTURE-ARCHITECTURE.md](docs/INFRASTRUCTURE-ARCHITECTURE.md) — service boundaries, hosting, identity, data, delivery and phased expansion.
+- **Infrastructure operations:** [docs/INFRASTRUCTURE-OPERATIONS.md](docs/INFRASTRUCTURE-OPERATIONS.md) — CI triage, static-site/MCP/Chatbot smoke tests, incident response and recovery gates.
+- **Machine-readable service registry:** [ecosystem/services.json](ecosystem/services.json) — deployment evidence and verification status for each service.
+- **Service registry validator:** [scripts/validate-services.py](scripts/validate-services.py) — offline schema, URL, duplicate-ID and secret-pattern checks.
+- **Repository index and audit checklist:** [docs/REPOSITORY-INDEX.md](docs/REPOSITORY-INDEX.md)
+- **Ecosystem audit results:** [docs/AUDIT-RUN-2026-10-23.md](docs/AUDIT-RUN-2026-10-23.md)
+- **Source-level implementation findings:** [docs/IMPLEMENTATION-FINDINGS.md](docs/IMPLEMENTATION-FINDINGS.md)
+- **Brand/rebrand source document:** [OCodejs-by-Velclaw-Full-Rebrand.pdf](OCodejs-by-Velclaw-Full-Rebrand.pdf)
+- **OCode.js logo assets:** [SVG](ocodejs-logo.svg) · [Animated logo](ocodejs-animated-logo.gif) · [Black logo](ocode-logo-black.gif)
+
+- [OCodejs/OCodejs](https://github.com/OCodejs/OCodejs)
+- [Velclaw/OCodejs](https://github.com/Velclaw/OCodejs)
+- [VelCli](https://github.com/Velclaw/VelCli)
+- [X-BO](https://github.com/zskbot/X-BO)
+- [VelclawHost](https://github.com/Velclaw/VelclawHost)
+- [velclaw-deploy](https://github.com/Velclaw/velclaw-deploy)
+- [OAuth](https://github.com/Velclaw/Oauth)
+- [TechDocs](https://github.com/Velclaw/docs.velclaw.ai)
+- [VELCLAW](https://github.com/Velclaw/VELCLAW)
+- [Docs UI Reference](https://github.com/Velclaw/Velclaw-velclaw-docs-ui-reference)
+- [Velclaw-OCodejs](https://github.com/Velclaw/Velclaw-OCodejs)
+
+Repository links are references, not evidence that every source file has been inspected or that a project is production-ready. Product claims must be supported by source code, tests, or an explicit architecture decision.
+
+## Chatbot integration
+
+The documentation site now has a floating assistant launcher and a standalone `chatbot.html` page. The chatbot runtime remains a separate Next.js application in [OCodejs/chatbot](https://github.com/OCodejs/chatbot); it must be deployed independently on Vercel because GitHub Pages serves static files only.
+
+- Public endpoint configuration: [chatbot-config.js](chatbot-config.js) — set `window.OCODEJS_CHATBOT_URL` to the HTTPS Vercel deployment URL after deployment.
+- Standalone page: [chatbot.html](chatbot.html).
+- Integration notes and environment checklist: [docs/CHATBOT-INTEGRATION.md](docs/CHATBOT-INTEGRATION.md).
+
+Do not put API keys, database URLs, authentication secrets, or populated `.env` files in this repository. Configure `AUTH_SECRET`, `POSTGRES_URL`, `REDIS_URL`, and any required Blob/AI Gateway credentials in Vercel Project Settings or the relevant Vercel integrations. The Vercel project creation request for `OCodejs/chatbot` was blocked by a 403 permission error, so the live endpoint has not yet been verified and the public URL is intentionally unset.
+
+## Development status
+
+The current priority is to improve this repository itself: navigation, link integrity, mobile usability, accessibility, content accuracy, and repeatable documentation checks. Cross-repository synchronization has been discontinued; this project will not push documentation snapshots into other repositories.
+
+No production deployment, secret migration, or database modification is part of this documentation work.
+
+## Contributing
+
+Make changes on a branch and submit a pull request. Preserve source links, licensing, and attribution. Never commit credentials, populated environment files, or secrets.
+
+- **Machine-readable repository inventory:** [ecosystem/repositories.json](ecosystem/repositories.json)
+- **Inventory validation script:** [scripts/validate-ecosystem.py](scripts/validate-ecosystem.py)
+- **Implementation roadmap:** [docs/ROADMAP.md](docs/ROADMAP.md)
+
+
+## Infrastructure Control Center
+
+- **Control Center:** [infra/](infra/) — read-only service inventory and browser health checks.
+- **Integration contracts:** [docs/INTEGRATION-CONTRACTS.md](docs/INTEGRATION-CONTRACTS.md) — API gateway, identity, webhooks and observability standards.
+- **Control Center guide:** [docs/CONTROL-CENTER-USER-GUIDE.md](docs/CONTROL-CENTER-USER-GUIDE.md) — evidence labels, browser health-check semantics and safety boundaries.
+- **Cloudflare capability snapshot:** [ecosystem/cloudflare-capabilities.json](ecosystem/cloudflare-capabilities.json) — read-only inventory; no resources created or modified.

@@ -1,0 +1,26 @@
+# Legacy Jekyll workflow retained for manual diagnostics only.
+# Production GitHub Pages deployment is handled exclusively by static.yml.
+name: Jekyll build (validation only)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: jekyll-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Build with Jekyll (no Pages deployment)
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1
+        with:
+          source: ./
+          destination: ./_site
