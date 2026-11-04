@@ -10,6 +10,8 @@ A standalone documentation hub for OCode.js and selected Velclaw engineering pro
 
 ## Start here
 
+- **Custom domain and hosting plan:** [docs/DOMAIN-SETUP.md](docs/DOMAIN-SETUP.md) — target hostname `ocodejs.dev`, current hosting evidence, activation checklist, and production safety gates.
+
 - **Project overview and architecture:** [docs/ECOSYSTEM.md](docs/ECOSYSTEM.md)
 - **OCode.js implementation roadmap:** [docs/ROADMAP.md](docs/ROADMAP.md)
 - **Agent Skills Directory:** [docs/AGENT-SKILLS-DIRECTORY.md](docs/AGENT-SKILLS-DIRECTORY.md) — curated skill categories, installation command, platform notes, and safety checklist.
